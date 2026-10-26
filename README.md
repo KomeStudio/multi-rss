@@ -4,7 +4,8 @@
 
 Built on **Cloudflare Workers**, this project provides an alternative to hosting an RSS aggregation service on your own server. It is suitable for developer communities, blogging networks, technology publications, and anyone who wants to bring updates from multiple RSS or Atom feeds into one place.
 
-Inspired by projects such as [Planet](https://en.wikipedia.org/wiki/Planet_(software)) and [MoonMoon](https://moonmoon.org/), Multi RSS makes it easier to follow content published across multiple websites through a centralized feed.
+Multi RSS makes it easier to follow content published across multiple websites through a centralized feed.
+Additionally, you can use RSS link aggregation to automatically post articles to social media.
 
 ## Key Features
 
