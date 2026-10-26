@@ -1,0 +1,22 @@
+name = "multi-rss"
+main = "index.js"
+compatibility_date = "2025-09-01"
+workers_dev = true
+
+# KV cache dữ liệu RSS. Tên binding phải là định danh JS hợp lệ (không có dấu gạch ngang)
+[[kv_namespaces]]
+binding = "RSS_KV"
+id = "56f0112c8fcd4620850dac2d9f490eae"
+
+[vars]
+FEEDS = "https://komestudio.com/rss.xml,https://blog.komestudio.com/rss.xml,https://vntim.blogspot.com/rss.xml"
+MAX_SIZE = 50
+TITLE = "Kome Studio RSS"
+DESCRIPTION = "Kome Studio creates cozy games 😊 lovable characters, animated stories, and original worlds 🎮 Play, smile, belong 🚀 Discover the KomeVerse."
+AUTHOR = "Hoang Dac Viet"
+SITE_URL = "https://multi-rss.hoangdacviet.workers.dev"
+CUSTOM_URL = "http://rss.kome.top"
+CACHE_MAX_AGE = "86400"
+
+[triggers]
+crons = ["0 */2 * * *"]

@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "name": "multi-rss",
+  "version": "2.0.0",
+  "description": "Generate a single feed of content from multiple RSS/Atom sources. Runs on Cloudflare Workers.",
+  "type": "module",
+  "main": "./index.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "author": "HoangDacViet <admin@komestudio.com>",
+  "license": "AGPL-3.0",
+  "dependencies": {
+    "fast-xml-parser": "^5.2.5"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}
