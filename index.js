@@ -168,6 +168,7 @@ function buildHtml(items, sources, env) {
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${escXml(env.TITLE)}</title>
 <meta name="description" content="${escXml(env.DESCRIPTION)}">
+<link rel="icon" type="image/svg+xml" href="/logo.svg">
 <link rel="alternate" type="application/rss+xml" href="/rss">
 <style>
 :root{color-scheme:light dark}
@@ -225,6 +226,11 @@ async function refresh(env) {
 
 /* ---------- Phục vụ request ---------- */
 
+const LOGO_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+<path fill="#FABB05" d="M511.98 252.94 A256 256 0 1 0 480.52 378.98 A257 257 0 0 1 228.07 285.98 A423 423 0 0 0 511.98 252.94Z"/>
+<circle cx="281" cy="141" r="49" fill="#EA4A3B"/>
+</svg>`
+
 const ROUTES = {
   '/': ['html', 'text/html;charset=UTF-8'],
   '/rss': ['rss', 'application/rss+xml;charset=UTF-8'],
@@ -232,7 +238,17 @@ const ROUTES = {
 }
 
 async function handleRequest(request, env, ctx) {
-  const route = ROUTES[new URL(request.url).pathname]
+  const pathname = new URL(request.url).pathname
+  if (pathname === '/logo.svg' || pathname === '/favicon.ico') {
+    return new Response(LOGO_SVG, {
+      headers: {
+        'content-type': 'image/svg+xml',
+        'Cache-Control': `public, max-age=${env.CACHE_MAX_AGE || 86400}`,
+      },
+    })
+  }
+
+  const route = ROUTES[pathname]
   if (!route) return new Response('Not found', { status: 404 })
 
   const cache = caches.default
