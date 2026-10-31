@@ -6,7 +6,7 @@ workers_dev = true
 # KV cache dữ liệu RSS. Tên binding phải là định danh JS hợp lệ (không có dấu gạch ngang)
 [[kv_namespaces]]
 binding = "RSS_KV"
-id = "56f0112c8fcd4620850dac2d9f490eae"
+id = "028581bfdb9f4735a0cd3972dd0a76d5"
 
 [vars]
 FEEDS = "https://komestudio.com/rss.xml,https://blog.komestudio.com/rss.xml,https://vntim.blogspot.com/rss.xml"
