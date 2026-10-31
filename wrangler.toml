@@ -14,7 +14,7 @@ MAX_SIZE = 50
 TITLE = "Kome Studio RSS"
 DESCRIPTION = "Kome Studio creates cozy games 😊 lovable characters, animated stories, and original worlds 🎮 Play, smile, belong 🚀 Discover the KomeVerse."
 AUTHOR = "Hoang Dac Viet"
-SITE_URL = "https://multi-rss.hoangdacviet.workers.dev"
+SITE_URL = "https://multi-rss.kometop.workers.dev"
 CUSTOM_URL = "http://rss.kome.top"
 CACHE_MAX_AGE = "86400"
 
